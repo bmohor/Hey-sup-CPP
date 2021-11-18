@@ -1,19 +1,23 @@
-FILES   =   megaphone.cpp
-OFILES  =   $(patsubst %.cpp,%.o,$(FILES))
-FLAGS   =  	clang++ -Wall -Werror -Wextra
-NAME    =   megaphone
-HEADER  =   philo.h
+FILES = megaphone.cpp
+OFILES = $(patsubst %.cpp,%.o,$(FILES))
+CC = clang++
+NAME = megaphone
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):    $(OFILES)
-				$(FLAGS) $(OFILES) -o $(NAME)
-%.o:        %.c $(HEADER) Makefile
-				$(FLAGS) -c $<
+$(NAME): $(OFILES)
+	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $<
+
 clean:
-			rm -f $(OFILES)
-fclean:     clean
-			rm -f $(NAME)
+	rm -rf $(OFILES)
+
+fclean: clean
+	rm -rf $(NAME)
+
 re: fclean all
 
 .PHONY: all clean fclean re

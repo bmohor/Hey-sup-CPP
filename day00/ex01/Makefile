@@ -1,19 +1,26 @@
-FILES   =   map.cpp
-OFILES  =   $(patsubst %.cpp,%.o,$(FILES))
-FLAGS   =  	clang++ -Wall -Werror -Wextra
-NAME    =   map
-HEADER  =   map.h
+FILES = main.cpp
+OFILES = $(patsubst %.cpp,%.o,$(FILES))
+DEPS = $(patsubst %.o,%.d,$(OFILES))
+DEPFLAGS = -MMD -MF $(@:.o=.d)
+CC = clang++
+NAME = phonebook
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):    $(OFILES)
-				$(FLAGS) $(OFILES) -o $(NAME)
-%.o:        %.c $(HEADER) Makefile
-				$(FLAGS) -c $<
+$(NAME): $(OFILES)
+	$(CC) $(FLAGS) $(OFILES) -o $(NAME) -include $(DEPS)
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< $(DEPFLAGS) -o $(<:.cpp=.o)
+
 clean:
-			rm -f $(OFILES)
-fclean:     clean
-			rm -f $(NAME)
+	rm -rf $(OFILES)
+	rm -rf $(DEPS)
+
+fclean: clean
+	rm -rf $(NAME)
+
 re: fclean all
 
 .PHONY: all clean fclean re

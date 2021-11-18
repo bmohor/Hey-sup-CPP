@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int main(int argc, char **argv)
 {
 	int i(0), j(0);
@@ -12,14 +10,14 @@ int main(int argc, char **argv)
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] > 96 &&  argv[i][j] < 122)
-				cout << char(argv[i][j] - 32);
+				std::cout << char(argv[i][j] - 32);
 			else
-				cout << argv[i][j];
+				std::cout << argv[i][j];
 			j++;
 		}
 	}
 	if (argc == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	std::cout << std::endl;
 	return (0);
 }
