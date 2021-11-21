@@ -1,9 +1,9 @@
-FILES = main.cpp phonebook.cpp contact.cpp
+FILES = tests.cpp Account.cpp
 OFILES = $(patsubst %.cpp,%.o,$(FILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
-NAME = phonebook
+NAME = account
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
@@ -11,6 +11,7 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 -include $(DEPS)
+
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< $(DEPFLAGS) -o $(<:.cpp=.o)
 
