@@ -1,18 +1,20 @@
 #include "Karen.hpp"
 
 void	Karen::complain(std::string level) {
-	std::string tmp[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	typedef void (Karen::*Actions)(void);
-	Actions ptr[4] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-	int i = 0;
-	while (i != 4) {
-		if (level == tmp[i]) {
-			(this->*(ptr[i]))();
-			return ;
+	int i = 4;
+	std::string l[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (int j = 0; j < 4; j++) {
+		if (level == l[j]) {
+			i = j;
 		}
-		i++;
 	}
-	throw std::invalid_argument("No such comma.");
+    switch (i) {
+		case 0 : Karen::debug();
+		case 1 : Karen::info();
+		case 2 : Karen::warning();
+		case 3 : Karen::error(); break ;
+        default: std::cout << "[ Probably complaining about insignificant problems ]";
+    }
 }
 void	Karen::debug(void) {
 	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
