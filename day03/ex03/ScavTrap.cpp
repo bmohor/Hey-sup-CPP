@@ -26,4 +26,6 @@ void	ScavTrap::attack(const std::string& target) {
 	else
 		std::cout << Name + ": Need to recharge my shields first." << std::endl;
 }
-
+void ScavTrap::guardGate() {
+	std::cout << "Entered the GATE" << std::endl;
+}

@@ -1,9 +1,9 @@
-FILES =  ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+FILES =  ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OFILES = $(patsubst %.cpp,%.o,$(FILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
-NAME = trio
+NAME = fullSquad
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)

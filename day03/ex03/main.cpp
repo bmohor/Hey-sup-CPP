@@ -1,7 +1,7 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
-	ClapTrap mirage("Mirage");
+/*	ClapTrap mirage("Mirage");
 	mirage.takeDamage(20);
 	mirage.attack("Wraith");
 	mirage.beRepaired(100);
@@ -18,5 +18,12 @@ int main() {
 	Crypto.attack("Ash");
 	Crypto.beRepaired(100);
 	Crypto.attack("Ash");
+*/
+	DiamondTrap lf("Lifeline");
+	lf.takeDamage(20);
+	lf.attack("Wraith");
+	lf.beRepaired(100);
+	lf.attack("Wraith");	
+	lf.whoAmI();
 	return 0;
 }
