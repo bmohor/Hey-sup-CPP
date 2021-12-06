@@ -8,6 +8,8 @@ int	main()
 	while (1)
 	{
 		std::cin >> input;
+		if (std::cin.eof())
+			break;
 		if (input == "EXIT")
 			return (0);
 		else if (input == "ADD") {
