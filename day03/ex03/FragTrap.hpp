@@ -1,3 +1,4 @@
+#pragma once
 #include "ScavTrap.hpp"
 
 class FragTrap:virtual public ClapTrap {

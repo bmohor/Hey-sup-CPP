@@ -8,8 +8,8 @@ class ClapTrap {
 		ClapTrap(const std::string name);
 		~ClapTrap();
 		void attack(const std::string& target);
-		virtual void takeDamage(unsigned int amount);
-		virtual void beRepaired(unsigned int amount);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 	protected:
 		std::string Name;
 		int	Hitpoints;

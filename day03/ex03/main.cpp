@@ -25,5 +25,6 @@ int main() {
 	lf.beRepaired(100);
 	lf.attack("Wraith");	
 	lf.whoAmI();
+//	lf.highFivesGuys();
 	return 0;
 }

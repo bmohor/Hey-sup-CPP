@@ -17,7 +17,7 @@ DiamondTrap::DiamondTrap(const std::string name) {
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << Name + ": I come too far to give up now." << std::endl;
+	std::cout << this->Name + ": I come too far to give up now." << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target) {
@@ -27,11 +27,3 @@ void DiamondTrap::attack(const std::string& target) {
 void DiamondTrap::whoAmI() {
 	std::cout << "Name is: " + Name + ". Or: " + ClapTrap::Name << std::endl;
 }
-/*
-void DiamondTrap::takeDamage(unsigned int amount) {
-	ClapTrap::takeDamage(amount);
-}
-void DiamondTrap::beRepaired(unsigned int amount) {
-	ClapTrap::beRepaired(amount);
-}
-*/

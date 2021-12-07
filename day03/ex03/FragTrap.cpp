@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap() {
 	Name = "Crypto";
 	Hitpoints = 100;
 	EnergyPoints = 100;
@@ -8,7 +8,7 @@ FragTrap::FragTrap() {
 	std::cout << "This is only the beginning. 끝나면 알 거야." << std::endl;
 }
 
-FragTrap::FragTrap(const std::string name) {
+FragTrap::FragTrap(const std::string name) : ClapTrap() {
 	Name = name;
 	Hitpoints = 100;
 	EnergyPoints = 100;

@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap() : ClapTrap() {
 	Name = "Rampart";
 	Hitpoints = 100;
 	EnergyPoints = 100;
@@ -8,7 +8,7 @@ ScavTrap::ScavTrap() {
 	std::cout << "Eh, we both woke up today! Not a bad start." << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string name) {
+ScavTrap::ScavTrap(const std::string name) : ClapTrap() {
 	Name = name;
 	Hitpoints = 100;
 	EnergyPoints = 100;
